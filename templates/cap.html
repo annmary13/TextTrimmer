@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Captioning</title>
+
+
+    <style>
+
+
+    body
+      {
+        text-align: center;
+        /*background-color: #e7f3f6;*/
+        padding: 60px;
+        
+        background-image: url('static/img2.jpg'); /* Replace 'background_image.jpg' with your image file */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 90vh;
+      }
+
+        textarea {
+           
+           height: 200px; 
+           border-radius: 10px;
+           padding-left: 10px;
+           resize: none;
+           width: 70%; /* Make the textbox fill the container */
+           box-sizing: border-box; /* Include padding and border in the width */
+           text-align: left; /* Align text to the left within the textbox */
+           display: block;
+           margin: 0 auto;
+           box-sizing: border-box; /* Include padding and border in the width */
+           
+       }
+
+       button {
+            padding: 10px 10px;
+            font-size: 16px;
+            margin-top: 40px;
+            margin-right: 100px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #707275;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <h1>Text Captioning</h1>
+    <form id="summarizeForm">
+        <label for="inputText"></label><br>
+        <textarea id="inputText" placeholder="Write your input text here" name="inputText" rows="10" cols="40"></textarea><br>
+        <button type="button" onclick="summar()">Generate Caption</button>
+    </form>
+    <div id="summary"></div>
+
+    <script>
+        function summar() {
+            var text = document.getElementById("inputText").value;
+            fetch('/summar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: text })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("summary").innerHTML = "<b>Caption:</b> " + data.summary;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

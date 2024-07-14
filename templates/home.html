@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Tool</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    background-image: url('static/img2.jpg');/* Replace 'background_image.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    
+  }
+  .container {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 55%;
+   
+    transform: translate(-50%, -50%);
+    color:black;
+  }
+  
+  .sidebar {
+    background-color: black ;
+    color: white;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  .sidebar a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    display: block;
+  }
+  .sidebar a:hover {
+    background-color: #555;
+  }
+  .content {
+    margin-left: 200px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+
+  h1 {
+    font-size: 5em;
+    margin-bottom: 20px;
+    
+  }
+ 
+  button {
+    
+    padding: 10px 20px;
+    font-size: 1.6em;
+    margin: 40px;
+    cursor: pointer;
+    border: none;
+    background-color:black;
+    color: white;
+    border-radius: 5px;
+    font-family: cursive;
+  }
+  button:hover {
+    background-color:gray;
+  }
+  .sidebar p{
+    
+    margin-bottom: 10px;
+  }
+  .down{
+    margin-top: 240px;
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="details">Details</a> <!-- Link to details page -->
+        <div class="down">
+        <p><i class="fas fa-check green-tick"></i>Unlimited text summarization</p>
+        <p><i class="fas fa-check green-tick"></i>Extract key points in seconds</p>
+        <p><i class="fas fa-check green-tick"></i>ideal for academic research</p>
+        <p><i class="fas fa-check green-tick"></i>Articles,paragraphs and essays</p>
+        <p><i class="fas fa-check green-tick"></i>Generate captions</p>
+        </div>
+
+
+      </div>
+
+<div class="container">
+  
+    
+  <h1>Text Trimmer</h1>
+   <p>This tool helps you trim down lengthy texts into concise summaries or captions.</p>
+   <div class="buttons-container">
+    <a href="index"><button id="summarizerBtn"> Summarizer</button></a>
+    <a href="cap"><button id="captionerBtn">Captioner</button></a>
+  </div>
+  
+ 
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

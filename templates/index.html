@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="static/styles.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="container">
+        <form action="/summarize" method="post">
+            <h1>Welcome to Text Summarizer</h1>
+            <hr>
+            <br><br>  
+            <div class="cls">
+              <textarea rows="10" cols="3000" placeholder="Write your input text here" name="textarea"></textarea>
+              <br><br>
+              <h3 class="o">output limit </h3>
+              <div class="slider-container">
+                <input type="range" min="0" max="100" value="50" class="slider" id="myRange" name="no_of_sentences">
+                <!-- <input type="range" min="0" max="100" value="50" class="slider" id="myRange" name="range_value"> -->
+                <div class="slider-labels">
+                  <span>0</span>
+                  <span>25</span>
+                  <span>50</span>
+                  <span>75</span>
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+            <div>
+                <button class="s" type="submit">Summarize</button>
+                <button class="s" onclick="clearText()">Clear Text</button>
+            </div>
+            <br><br><br>
+        </form>
+    </div>
+    <br><br><br><br><br><br>
+</body>
+</html>

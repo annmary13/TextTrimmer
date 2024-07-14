@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Caption Generator</title>
+<style>
+   
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        margin: 0;
+    padding: 20px;
+    font-family: cursive;
+    background-image: url('static/img2.jpg');/* Replace 'background_image.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    }
+    h1 {
+        text-align: center;
+    }
+    .form-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 60px;
+    }
+    .image-upload {
+        width: 33%;
+        height: 2000%;
+        background-color: #e0e0e0; /* Light grey background color */
+        padding: 100px; /* Add some padding */
+        border-radius: 5px; /* Rounded corners */
+        margin-left: 30px   ;
+        border: 3px solid black;
+    }
+    .text-input {
+        width: 33%;
+        height: 50%;
+        background-color: #c0c0c0; /* Light grey background color */
+        padding: 80px; /* Add some padding */
+        border-radius: 5px; /* Rounded corners */
+        margin-right: 20px;
+        border: 3px solid black;
+    }  
+    .button-container {
+        text-align: center;
+        margin-top: 60px;
+       
+    }
+    #generated-caption {
+        margin-top: 30px;
+        padding: 10px;
+        border: 3px solid black;
+        background-color: #f9f9f9;
+        width: 60%;
+        height: 200px;
+        resize: vertical;
+    }
+    button {
+        background-color: black;
+        color: white;
+        border:none;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 7px;
+        font-family: cursive;
+    }
+    /* Hover effect for the black button */
+    button:hover {
+        background-color: #333;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Image-Text Caption Generator</h1>
+    <form id="captionForm" action="/captionout">
+        <div class="form-container">
+            <div class="image-upload">
+                <label for="image">Upload Image or Enter Image Link:</label><br>
+                <input type="file" id="image" name="image" accept="image/*"><br><br>
+            </div>
+            <div class="text-input">
+                <label for="caption">Enter Text:</label><br>
+                <textarea id="caption" name="caption" rows="4" cols="50"></textarea><br><br>
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="generateCaption()">Generate Caption</button>
+        </div>
+        <div class="button-container">
+            <textarea id="generated-caption" readonly placeholder="Generated Caption" rows="4"></textarea>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    function generateCaption() {
+        // Code to generate caption goes here
+        // For demonstration, let's just display a dummy caption
+        document.getElementById("generated-caption").value = "This is a generated caption.";
+    }
+</script>
+</body>
+</html>
